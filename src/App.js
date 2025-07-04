@@ -114,19 +114,19 @@ function App() {
           <h1>ENTRE EM CONTATO</h1>
 
                   <div className="social-card-icons">
-              <a href="https://github.com/seuusuario" target="_blank" rel="noreferrer">
+              <a href="https://github.com/GitVCL" target="_blank" rel="noreferrer">
                       <FaGithub size={32} />
                     </a>
-                    <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" rel="noreferrer">
+                    <a href="www.linkedin.com/in/andré-vasconcelos-17a21030b" target="_blank" rel="noreferrer">
                       <FaLinkedin size={32} />
                     </a>
-                    <a href="mailto:seuemail@gmail.com" target="_blank" rel="noreferrer">
+                    <a href="chat.vasconcelos@gmail.com" target="_blank" rel="noreferrer">
                       <FaEnvelope size={32} />
                     </a>
-                    <a href="https://wa.me/55seunumero" target="_blank" rel="noreferrer">
+                    <a href="https://wa.me/5581981192030" target="_blank" rel="noreferrer">
                       <FaWhatsapp size={32} />
                     </a>
-                    <a href="https://www.instagram.com/seuusuario" target="_blank" rel="noreferrer">
+                    <a href="https://www.instagram.com/vasconcelosdev_/profilecard/?igsh=ajBrcm5hczd4bzRlseuusuario" target="_blank" rel="noreferrer">
                       <FaInstagram size={32} />
                     </a>
                   </div>
