@@ -6,13 +6,14 @@
 }
 
 body, html, #root, .App {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
   color: white;
   background-color: black;
-  overflow-x: hidden;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 /* BACKGROUND VÍDEO GERAL */
