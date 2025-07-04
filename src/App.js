@@ -75,7 +75,7 @@ function App() {
               <div className="portfolio-grid">
                 <a
                   className="portfolio-card"
-                  href="https://luiza-club.vercel.app/"
+                  href="https://seulink-softwares.com"
                   target="_blank"
                   rel="noreferrer"
                 >
