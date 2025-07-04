@@ -8,6 +8,8 @@ import { FaCogs, FaLaptopCode, FaGlobe } from 'react-icons/fa';
 function App() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -34,13 +36,23 @@ function App() {
 
       {/* Navbar que desaparece ao rolar */}
       <header className={`header ${showNavbar ? '' : 'hide'}`}>
-        <div className="logo">VasconcelosDEV</div>
-        <nav className="nav">
-          <a href="#trabalhos1">Sobre</a>
-          <a href="#trabalhos2">Portifolio</a>
-          <a href="#trabalhos3">Contato</a>
-        </nav>
-      </header>
+  <div className="logo">VasconcelosDEV</div>
+
+          {/* Botão hambúrguer para mobile */}
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+
+          {/* Menu de navegação */}
+          <nav className={`nav ${menuOpen ? 'open' : ''}`}>
+            <a href="#trabalhos1" onClick={() => setMenuOpen(false)}>Sobre</a>
+            <a href="#trabalhos2" onClick={() => setMenuOpen(false)}>Portifolio</a>
+            <a href="#trabalhos3" onClick={() => setMenuOpen(false)}>Contato</a>
+          </nav>
+        </header>
+
 
     
 
@@ -67,7 +79,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaCogs size={40} style={{ marginBottom: '10px' }} />
+                  <FaCogs size={20} style={{ marginBottom: '10px' }} />
                   <p>Sistemas</p>
                 </a>
 
@@ -77,7 +89,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaLaptopCode size={40} style={{ marginBottom: '10px' }} />
+                  <FaLaptopCode size={20} style={{ marginBottom: '10px' }} />
                   <p>Softwares</p>
                 </a>
 
@@ -87,7 +99,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaGlobe size={40} style={{ marginBottom: '10px' }} />
+                  <FaGlobe size={20} style={{ marginBottom: '10px' }} />
                   <p>Sites</p>
                 </a>
               </div>
