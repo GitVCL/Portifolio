@@ -1,38 +1,257 @@
-.App {
-  text-align: center;
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+body, html, #root, .App {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND VÍDEO GERAL */
+.video-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NAVBAR FIXA + EFEITO DESAPARECER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  transition: transform 0.4s ease;
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+/* MENU LINKS */
+.nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* HERO (INTRO) */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: brightness(0.6);
+  padding: 0 20px;
+  z-index: 1;
+}
+
+/* SEÇÕES GERAIS */
+.section {
+  height: 100vh;
+  padding: 0 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* SEÇÕES COM VÍDEO */
+.video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  backdrop-filter: brightness(0.8);
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section-content2 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  backdrop-filter: brightness(0.8);
+  padding: 200px;
+}
+
+
+/* DARK VARIANT */
+.section.dark {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* CONTATO */
+.contato {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* SOCIAL CARD - CONTATO */
+.social-card {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-card a {
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-card a:hover {
+  background-color: white;
+  color: black;
+}
+
+.section-content2 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 100px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-card {
+  width: 250px;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.social-card-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.social-card-icons a {
+  color: white;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-card-icons a:hover {
+  transform: scale(1.1);
+  color: #00bfff;
+}
+
+.qrcode-boxes {
+  display: flex;
+  gap: 60px;
+  margin-top: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.qrcode-boxes div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.qrcode-boxes img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
